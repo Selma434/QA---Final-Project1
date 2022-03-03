@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Countries and Tourist Sites</title>
+    </head>
+    <body >
+        <div style="text-align: center">
+            <h1>My Favourite Tourist Sites</h1>
+            <span><a href="{{ url_for('home') }}">Home</a></span>
+            <span><a href="{{ url_for('create_location') }}">Add Location</a></span>
+            <span><a href="{{ url_for('create_site') }}">Add Site</a></span>
+            <br><br>
+            {% block travel %}{% endblock travel %}
+        </div>
+        
+    </body>
+</html>

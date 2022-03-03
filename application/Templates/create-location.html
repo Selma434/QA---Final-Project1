@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+{% block travel %}
+<h3>Add Location:</h3>
+<div class='form'>
+    <form method='POST' action=''>
+        {{ form.hidden_tag() }}
+
+        {{ form.country.label }} {{ form.country }}
+        {% if form.country.errors %}
+        <div class='error'>
+            {% for error in form.country.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+        </div>
+        {% endif %}
+        <br>
+        
+        {{ form.city.label }} {{ form.city }}
+        {% if form.city.errors %}
+        <div class='error'>
+            {% for error in form.city.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+        </div>
+        {% endif %}
+        <br>
+
+        {{ form.submit }}
+    </form>
+</div>
+{% endblock travel %}

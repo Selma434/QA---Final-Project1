@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+{% block travel %}
+<h3>Add Site:</h3>
+<div class='form'>
+    <form method='POST' action=''>
+        {{ form.hidden_tag() }}
+
+        {{ form.site_name.label }} {{ form.site_name }}
+        {% if form.site_name.errors %}
+        <div class='error'>
+            {% for error in form.site_name.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+        </div>
+        {% endif %}
+        <br>
+
+        {{ form.location_id.label }} {{ form.location_id }}
+        {% if form.location_id.errors %}
+        <div class='error'>
+            {% for error in form.location_id.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+        </div>
+        {% endif %}
+        <br>
+
+        {{ form.date_visited.label }} {{ form.date_visited }}
+        {% if form.date_visited.errors %}
+        <div class='error'>
+            {% for error in form.date_visited.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+        </div>
+        {% endif %}
+        <br>
+
+        {{ form.favourite_part.label }} {{ form.favourite_part }}
+        {% if form.date_visited.errors %}
+        <div class='error'>
+            {% for error in form.favourite_part.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+        </div>
+        {% endif %}
+        <br>
+
+        {{ form.submit }}
+    </form>
+</div>
+{% endblock travel %}
