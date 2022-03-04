@@ -34,7 +34,7 @@ def create_site():
         )
     
     if form.validate_on_submit():
-        site = TouristSites(site_name=form.site_name.data, date_visited=form.date_visited.data, favourite_part=form.favourite_part.data, location_id=form.location_id.data)
+        site = TouristSites(site_name=form.site_name.data, favourite_part=form.favourite_part.data, location_id=form.location_id.data)
         db.session.add(site)
         db.session.commit()
         return redirect(url_for('home'))
@@ -54,7 +54,6 @@ def updatesite(id):
 
     if request.method == 'GET':
         form.site_name.data = site.site_name
-        form.date_visited.data = site.date_visited
         form.favourite_part.data = site.favourite_part
         form.location_id.data = site.location_id
         return render_template('update.html', form=form)
@@ -62,7 +61,6 @@ def updatesite(id):
     else: 
         if form.validate_on_submit():
             site.site_name = form.site_name.data
-            site.date_visited = form.date_visited.data
             site.favourite_part = form.favourite_part.data
             site.location_id = form.location_id.data
             db.session.commit()
