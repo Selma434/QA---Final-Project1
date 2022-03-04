@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 {% block travel %}
-<h3>Add Site:</h3>
+<h3>Update Site:</h3>
 <div class='form'>
     <form method='POST' action=''>
         {{ form.hidden_tag() }}
@@ -25,18 +25,8 @@
         {% endif %}
         <br>
 
-        {{ form.date_visited.label }} {{ form.date_visited }}
-        {% if form.date_visited.errors %}
-        <div class='error'>
-            {% for error in form.date_visited.errors %}
-                <span>{{ error }}</span>
-            {% endfor %}
-        </div>
-        {% endif %}
-        <br>
-
         {{ form.favourite_part.label }} {{ form.favourite_part }}
-        {% if form.date_visited.errors %}
+        {% if form.favourite_part.errors %}
         <div class='error'>
             {% for error in form.favourite_part.errors %}
                 <span>{{ error }}</span>
