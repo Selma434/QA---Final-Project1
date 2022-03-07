@@ -1,0 +1,30 @@
+version: "3.8"
+services:
+  flask-app:
+    # deploy:
+    #  replicas: 3 
+    build: .
+    ports:
+    - target: 5000
+      published: 5000
+      protocol: tcp
+
+
+  mysql:
+    # deploy:
+    #  replicas: 3 
+    image: mysql:5.7
+    ports:
+    - target: 3306
+      published: 3306
+      protocol: tcp
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+    volumes:
+    - type: volume
+      source: mysql
+      target: /var/lib/mysql
+
+volumes:
+  mysql:
