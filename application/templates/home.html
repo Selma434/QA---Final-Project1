@@ -1,39 +1,29 @@
 {% extends 'layout.html' %}
 {% block travel %}
-    
-    <p>
-        <h3> All Locations </h3>
+
+    <p>   
 
         {% for location in locations %}
 
-            {{ location.country }} , {{ location.city }}<br><br>
-      
-        {% endfor %}
-    </p>
-    
-    
-    <p>
-        {% for location in locations %}
+            <h3> Location </h3>
+
+            {{ location.country }} , {{ location.city }}<br>
+
+            <h3> Visited tourist sites in {{ location.city }} </h3>
             
+            {% for site in location.tourist_sites %}
 
-            <h3> Visited sites in {{ location.city }}</h3>
-    
-            {% for site in sites %}
-
-                {% if location.id==site.location_id %}
-
-                    Site name: {{ site.site_name }}<br>
-                    Location: {{ site.location_id }}<br>
-                    Favourite part: {{ site.favourite_part }}<br>
-                     
-                    <button><a href="{{ url_for('updatesite', id=site.id) }}">Update</a></button>
-                    <button><a href="{{ url_for('deletesite', id=site.id) }}">Delete</a></button><br><br>
+                Site name: {{ site.site_name }}<br>
+                Location: {{ location.city }}<br>
+                Favourite part: {{ site.favourite_part }}<br>
                 
-                {% endif %}
+                <button><a href="{{ url_for('updatesite', id=site.id) }}">Update</a></button>
+                <button><a href="{{ url_for('deletesite', id=site.id) }}">Delete</a></button><br><br><br>
 
-            {% endfor %}          
+            {% endfor%}
 
         {% endfor %}
+
     </p>
 
 {% endblock travel %}
