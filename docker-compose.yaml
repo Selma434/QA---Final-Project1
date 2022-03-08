@@ -4,8 +4,8 @@ services:
     deploy:
      replicas: 3 
     image: ${DOCKER_HUB_CREDS_USR}/flaskapp:latest
-    container_name: flask-app
     build: .
+    container_name: flask-app
     ports:
     - target: 5000
       published: 5000
