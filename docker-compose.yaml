@@ -1,8 +1,10 @@
 version: "3.8"
 services:
   flask-app:
-    # deploy:
-    #  replicas: 3 
+    deploy:
+     replicas: 3 
+    image: ${DOCKER_HUB_CREDS_USR}/flaskapp:latest
+    container_name: flask-app
     build: .
     ports:
     - target: 5000
@@ -11,9 +13,10 @@ services:
 
 
   mysql:
-    # deploy:
-    #  replicas: 3 
+    deploy:
+     replicas: 3 
     image: mysql:5.7
+    container_name: mysql
     ports:
     - target: 3306
       published: 3306
