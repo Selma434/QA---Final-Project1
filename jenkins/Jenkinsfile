@@ -1,8 +1,9 @@
 pipeline {
     agent any
     environment {
-        DOCKER_HUB_CREDS = credentials("DOCKER_HUB_CREDS")
-        DATABASE_URI=credentials("DATABASE_URI")
+        DOCKER_HUB_CREDS_USR = credentials("DOCKER_HUB_CREDS_USR")
+        DOCKER_HUB_CREDS_PSW = credentials("DOCKER_HUB_CREDS_PSW")
+        // DATABASE_URI=credentials("DATABASE_URI")
     }
     stages {
         stage('Setup') {
