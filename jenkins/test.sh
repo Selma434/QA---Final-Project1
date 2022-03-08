@@ -11,16 +11,9 @@ source venv/bin/activate
 pip3 install -r requirements.txt
 
 
-#run pytest frontend
+#run pytest 
 python3 -m pytest \
 --cov=application \
---cov-report term-missing \
---cov-report xml:test_reports/frontend_coverage.xml \
---junitxml=test_reports/frontend_junit_report.xml
-
-#run pytest backend
-python3 -m pytest backend \
---cov=backend/application \
 --cov-report term-missing \
 --cov-report html
 
