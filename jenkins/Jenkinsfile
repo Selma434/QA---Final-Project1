@@ -2,8 +2,6 @@ pipeline {
     agent any
     environment {
         DOCKER_HUB_CREDS = credentials("DOCKER_HUB_CREDS")
-        // DOCKER_HUB_CREDS_USR = credentials("DOCKER_HUB_CREDS_USR")
-        // DOCKER_HUB_CREDS_PSW = credentials("DOCKER_HUB_CREDS_PSW")
         DATABASE_URI = credentials("DATABASE_URI")
         MYSQL_ROOT_PASSWORD = credentials("MYSQL_ROOT_PASSWORD")
         MYSQL_DATABASE = credentials("MYSQL_DATABASE")
