@@ -2,7 +2,7 @@
 
 echo "Test stage"
 
-rmdir test_reports
+rm -rf test_reports
 
 # venv created, sourced
 python3 -m venv venv
