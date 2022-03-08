@@ -4,7 +4,8 @@ echo "Setup stage"
 
 #apt dependencies
 sudo apt-get update
-sudo apt-get install -y curl jq python3-venv
+sudo apt-get install -y curl jq
+sudo apt-get install python3 python3-venv python3-pip
 
 
 #install docker
