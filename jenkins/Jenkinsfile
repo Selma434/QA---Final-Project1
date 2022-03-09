@@ -29,7 +29,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh "bash jenkins/deploy"
+                sh "bash jenkins/deploy.sh"
             }
         }
     }
