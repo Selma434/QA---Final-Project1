@@ -103,3 +103,4 @@ class TestDelete(TestBase):
             follow_redirects=True
         )
         self.assertNotIn(b"site1", response.data)
+        
