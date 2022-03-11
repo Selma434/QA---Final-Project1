@@ -9,13 +9,14 @@ source venv/bin/activate
 #install pip3 dependencies
 pip3 install -r requirements.txt
 
-rm -rf test_reports
+mkdir test_reports
 
 #run pytest 
 python3 -m pytest \
 --cov=application \
 --cov-report term-missing \
---cov-report html
+--cov-report xml:test_reports/app_coverage.xml \
+--junitxml=test_reports/app_junit_report.xml
 
 
 #remove venv
